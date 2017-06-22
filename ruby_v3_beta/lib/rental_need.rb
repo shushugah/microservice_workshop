@@ -24,7 +24,11 @@ def initialize(host_ip, port)
 
   def start
     loop do
-      @rapids_connection.publish need_packet
+      if rand > 0.2 || true
+        @rapids_connection.publish need_packet
+      else
+        @rapids_connection.publish need_ice_cream
+      end
       puts " [<] Published a rental offer need on the bus:\n\t     #{need_packet.to_json}"
       sleep 5
     end
@@ -33,10 +37,14 @@ def initialize(host_ip, port)
   private
 
     def need_packet
-      fields = { need: NEED }
+      fields = { need: NEED, uuid: SecureRandom.uuid }
       RapidsRivers::Packet.new fields
     end
 
+    def need_ice_cream
+      fields = { need: "ice cream" }
+      RapidsRivers::Packet.new fields
+    end
 end
 
 RentalNeed.new(ARGV.shift, ARGV.shift).start

@@ -1,0 +1,30 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    amq-protocol (2.2.0)
+    bunny (2.7.0)
+      amq-protocol (>= 2.2.0)
+    coderay (1.1.1)
+    json (2.1.0)
+    method_source (0.8.2)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-nav (0.2.4)
+      pry (>= 0.9.10, < 0.11.0)
+    rapids_rivers (0.2.14)
+    slop (3.6.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bunny (>= 2.6.4)
+  json (>= 2.0.3)
+  pry
+  pry-nav
+  rapids_rivers (>= 0.2.14)
+
+BUNDLED WITH
+   1.15.1
